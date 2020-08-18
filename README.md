@@ -1,4 +1,5 @@
-# dasa-teste-getgit
+# GetGit
+Um simples exemplo de uso da API do GitHub
 
 ## Project setup
 ```
