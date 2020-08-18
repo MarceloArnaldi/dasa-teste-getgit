@@ -1,5 +1,7 @@
 <template>
-  <h1>Footer</h1>
+  <footer class="footer">
+      <span>Copyright Dasa @2020</span>
+  </footer>
 </template>
 
 <script>
@@ -9,5 +11,13 @@ export default {
 </script>
 
 <style>
-
+    .footer {
+        grid-area: footer;
+        background-color: #DDD;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 10px;
+    }
 </style>
