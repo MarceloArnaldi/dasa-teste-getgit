@@ -20,6 +20,15 @@ cd .../dasa-teste-getgit
 sudo npm run build
 ```
 
+### Imagem no Docker
+No dirtório `docker/build-getgit` encontrará os arquivos para gerar a imagem Docker
+```
+docker pull arnaldi/getgit
+docker container run -p 8080:8080 getgit
+ou
+docker container run -p 8080:8080 arnaldi/getgit:0.0.1
+```
+
 ## Metodos
 
 ### getGitAuth.js
