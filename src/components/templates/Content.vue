@@ -20,7 +20,8 @@
             </tr>           
             </template>
             </tbody>        
-      </table>   
+      </table> 
+      <h2 class="msg" v-if="!show">{{msg}}</h2>  
   </div>  
 </template>
 
@@ -35,16 +36,20 @@ export default {
             repos: [],
             token: null,            
             user: '',
-            show: false        
+            show: false,
+            msg: ''  
         }
     },
     methods: {
         async getGit() {            
             try {                
-                let response = await GetGit.getGITRepos(this.user, this.token)                
-                this.show = true
+                let response = await GetGit.getGITRepos(this.user, this.token)                                
+                this.show = true      
+                this.msg = ''          
                 this.repos = response
             } catch(e) {
+                this.show = false
+                this.msg = 'usuário não encontrado'
                 console.error(e);
             }
         }
