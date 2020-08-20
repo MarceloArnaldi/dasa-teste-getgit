@@ -29,6 +29,9 @@ ou
 docker container run -p 8080:8080 arnaldi/getgit:0.0.1
 ```
 
+### Serviço Disponível em AWS S3
+http://getgit.arnaldi.page.link.s3-website-sa-east-1.amazonaws.com/
+
 ## Metodos
 
 ### getGitAuth.js
