@@ -21,7 +21,7 @@
             </template>
             </tbody>        
       </table> 
-      <h2 class="msg" v-if="!show">{{msg}}</h2>  
+      <h3 class="msg" v-if="!show">{{msg}}</h3>      
   </div>  
 </template>
 
@@ -49,8 +49,7 @@ export default {
                 this.repos = response
             } catch(e) {
                 this.show = false
-                this.msg = 'usuário não encontrado'
-                console.error(e);
+                this.msg = e              
             }
         }
     },
@@ -59,7 +58,7 @@ export default {
             let response = await GetGit.getAuth()
             this.token = response
         } catch(e) {
-            console.error(e)
+            this.msg = e
         }
     }
 }

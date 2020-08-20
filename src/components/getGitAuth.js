@@ -2,9 +2,12 @@ const { Octokit } = require("@octokit/rest")
 const { createTokenAuth } = require("@octokit/auth-token")
 
  async function getGITRepos (username, token) {
-    const octokit = new Octokit()
-    if (token !== null) {      
-      octokit.auth = token
+    
+    let octokit = new Octokit()
+    if (token !== null) {        
+        octokit = new Octokit({
+          auth: token 
+        });
     } 
     
     let response = await octokit.repos.listForUser({ username, type: 'public' })
@@ -15,14 +18,12 @@ const { createTokenAuth } = require("@octokit/auth-token")
 
 async function getAuth() {
     // usando o método de criação de Token Pessoal
-    //const TOKEN = "<your-personal-token>"  
-    //69d42c7ff2d4ae9ca184dfb497533c757f6258a8  
-    const TOKEN = '69d42c7ff2d4ae9ca184dfb497533c757f6258a8'
+    //const TOKEN = "<your-personal-token>"          
+    const TOKEN = null
     let token = null
     if (TOKEN !== null) {
-      const auth = createTokenAuth(TOKEN)
-      //const { token } = await auth()
-      token = await auth()
+      const auth = createTokenAuth(TOKEN)      
+      token = (await auth()).token
     } 
     return token
 }
