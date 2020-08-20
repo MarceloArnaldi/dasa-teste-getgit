@@ -7,7 +7,7 @@ Documentação oficial da [API Git Hub](https://github.com/octokit/rest.js/)
 ```
 git clone https://github.com/MarceloArnaldi/dasa-teste-getgit
 cd .../dasa-teste-getgit
-npm i
+sudo npm i
 npm run serve
 ```
 
@@ -17,7 +17,7 @@ Coloque os arquivos do diretório `/dist` em um WebServer ou na raiz.
 
 ```
 cd .../dasa-teste-getgit
-npm run build
+sudo npm run build
 ```
 
 ## Metodos
